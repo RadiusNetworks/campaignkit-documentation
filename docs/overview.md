@@ -1,7 +1,3 @@
----
-layout: campaignkit
----
-
 Campaign Kit is a cloud based service coupled with mobile SDKs that allows users to deliver targeted campaigns to mobile devices within proximity of any place.
 
 # Mobile SDK Documentation
@@ -32,25 +28,25 @@ Campaign Kit is a cloud based service coupled with mobile SDKs that allows users
   </tr>
   <tr>
     <td>Release Notes</td>
-    <td><a href='ios/AppleDocs/docs/Docs/release-notes.html'>0.0.7</a></td>
+    <td><a href='http://developer.radiusnetworks.com/campaignkit/ios/AppleDocs/docs/Docs/release-notes.html'>0.0.7</a></td>
     <td>0.0.2</td>
   </tr>
   <tr>
     <td>Getting Started</td>
-    <td><a href='ios/AppleDocs/docs/Docs/How-To.html'>How To</a></td>
-    <td><a href='android/How-To.html'>How To</a></td>
+    <td><a href='http://developer.radiusnetworks.com/campaignkit/ios/AppleDocs/docs/Docs/How-To.html'>How To</a></td>
+    <td><a href='http://developer.radiusnetworks.com/campaignkit/android/How-To.html'>How To</a></td>
   </tr> 
   <tr>
     <td>
     SDK Documentation</td>
-    <td><a href='ios/AppleDocs/index.html'>AppleDocs</a></td>
-    <td><a href='android/javadocs/index.html'>JavaDocs</a>
+    <td><a href='http://developer.radiusnetworks.com/campaignkit/ios/AppleDocs/index.html'>AppleDocs</a></td>
+    <td><a href='http://developer.radiusnetworks.com/campaignkit/android/javadocs/index.html'>JavaDocs</a>
     </td>
   </tr> 
   <tr>
     <td>Multiple Notifications</td>
-    <td><a href='ios/suppressing-multiple-campaigns.html'>Suppressing Multiple Campaigns</a></td>
-    <td><a href='android/suppressing-multiple-campaigns.html'>Suppressing Multiple Campaigns</a></td>
+    <td><a href='http://developer.radiusnetworks.com/campaignkit/ios/suppressing-multiple-campaigns.html'>Suppressing Multiple Campaigns</a></td>
+    <td><a href='http://developer.radiusnetworks.com/campaignkit/android/suppressing-multiple-campaigns.html'>Suppressing Multiple Campaigns</a></td>
   </tr>
    <tr>
     <td>Binaries</td>
