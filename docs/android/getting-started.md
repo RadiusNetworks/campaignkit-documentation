@@ -12,6 +12,18 @@ Requirements for use:
 
 
 
+##Sample Reference Apps
+
+We've created some simple apps that demonstrate usage of the Campaign Kit Library.
+
+For Android Studio users:
+https://github.com/RadiusNetworks/campaignkit-reference-android-studio
+
+For Eclipse users:
+https://github.com/RadiusNetworks/campaignkit-reference-android
+
+
+
 
 ##Getting Started
 
@@ -57,8 +69,6 @@ Requirements for use:
     // TODO: write custom code or use code from the Campaign Kit reference app
   }
 ```
-
-
 
 
 
@@ -217,4 +227,3 @@ Campaign Kit.
   ckManager.start()
 
 ```
-
