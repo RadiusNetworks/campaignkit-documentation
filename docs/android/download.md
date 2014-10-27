@@ -130,7 +130,7 @@ android {
 
  * Select a kit from the drop-down menu. Create one and add in some content, places, and campaigns.
 
- * On the kit overview page, click the android button in the top right corner. This will download your CampaignKit.properties file.
+ * On the kit overview page, click the Android Button in the top right corner. This will download your CampaignKit.properties file.
 
  * Copy the CampaignKit.properties file into the /src folder of your project.
 
