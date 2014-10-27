@@ -104,18 +104,24 @@ android {
  * Double click the .tar.gz file, this will produce a folder containing the library.
 
  * Import the library as an Android Project to your workspace.
+![alt tag](https://raw.githubusercontent.com/RadiusNetworks/campaignkit-documentation/master/docs/android/screenshots/importing.png) 
 
  * Right-click the library and open the Properties menu.
 
  * Select the Android tab on the left side of the window.
 
  * Make sure the library has the "is Library" checkbox checked.
+![alt tag](https://raw.githubusercontent.com/RadiusNetworks/campaignkit-documentation/master/docs/android/screenshots/cklibrary_islibrary.png) 
 
  * Right-click your project and open the Properties menu.
 
  * Select the Android tab on the left side of the window.
 
  * Add the campaignkit-android as a library.
+![alt tag](https://raw.githubusercontent.com/RadiusNetworks/campaignkit-documentation/master/docs/android/screenshots/adding_cklibrary.png) 
+
+ * Afterwards, your project's Android properties should look like this:
+![alt tag](https://raw.githubusercontent.com/RadiusNetworks/campaignkit-documentation/master/docs/android/screenshots/project_settings.png)
 
 
 3) Insert CampaignKit.properties file
