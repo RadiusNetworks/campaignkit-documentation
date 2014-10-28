@@ -16,7 +16,7 @@ Campaign Kit is a cloud based service coupled with mobile SDKs that allows users
 Kit is the high level container encompassing all the required resources you'll need to
 create and deliver powerful campaigns.
 
-<img src="kit.png" style="max-height: 275px;"/>
+<img src="kit.png" height="275"/>
 
 Kit allows you to bundle your content to your places and define campaign logistics.
 Although most will find having a single Kit to be adequate,
@@ -32,7 +32,7 @@ add another click the Add Kit button.
 Campaigns are the packaging of the content, including textual and media assets,
 that will be offered in the places associated to your campaign.
 
-<img src="campaign.png" style="max-height: 275px;"/>
+<img src="campaign.png" height="275"/>
 
 The components comprising a campaign are modular, allowing for the underlying places
 and content resources of a campaign to be edited without having to edit the actual campaign.
@@ -46,7 +46,7 @@ Places define which locations, when in proximity, will trigger your campaigns to
 rendered to your mobile audience. When you create a campaign it can be connected to
 any of your defined places.
 
-<img src="place.png" style="max-height: 275px;"/>
+<img src="place.png" height="275"/>
 
 When you choose a place to associate with a campaign, you are really selecting a hierarchy
 of places to associate. The interface allows you to define such a hierarchy of places.
@@ -59,7 +59,7 @@ And finally you will need to define each beacon that belongs to each location.
 Content is the collection of textual and media assets that are available to be attached to
 campaigns and presented to the user based on the behavior defined by the campaign event logic.
 
-<img src="content.png" style="max-height: 275px;"/>
+<img src="content.png" height="275"/>
 
 Content allows you to define a rich HTML-based layout incorporating your media to deliver a
 fully engaging experience in your campaign. Content allows you the flexibilty to present your
