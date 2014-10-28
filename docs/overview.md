@@ -1,4 +1,4 @@
-Campaign Kit is a cloud based service coupled with mobile SDKs that allows users to deliver targeted campaigns to mobile devices within proximity of any place.
+Campaign Kit is a cloud-based service coupled with mobile SDKs that enables you to deliver targeted campaigns to mobile application users on their mobile devices when they come within proximity of any specified place.
 
 # iOS Documentation
 * [Download & Release Notes](https://github.com/RadiusNetworks/campaignkit-ios/releases/latest)
@@ -15,20 +15,20 @@ Campaign Kit is a cloud based service coupled with mobile SDKs that allows users
 # Component Overview
 
 ## What is a Kit?
-Kit is the high level container encompassing all the required resources you'll need to
-create and deliver powerful campaigns.
+A Kit is the high level container encompassing all the required resources you'll need to
+create and deliver powerful proximity campaigns to your mobile application users. Each
+Kit will contain the places where your campaigns will be triggered, the content that will
+be displayed, and the rules that will govern when and how the campaign will operate.
 
 <img src="kit.png" height="275"/>
 
-Kit allows you to bundle your content to your places and define campaign logistics.
-Although most will find having a single Kit to be adequate,
-the ability to have multiple Kits allows you the flexibility to separate and
-differentiate campaigns to your target audience.
-This facilitates better control, maintenance, and operation of your campaigns.
+For each of your Campaign Kit-enabled mobile applications, you should create a corresponding
+Kit. If your mobile application is available on multiple platforms, like iOS and Android, you
+still only need a single kit corresponding to that mobile application.
 
-Click on a Kit in the left column navigation menu to uncover more details on Campaigns,
-Places, and Content in their respective sections. If you don't have a Kit yet or want to
-add another click the Add Kit button.
+Select a Kit from the drop-down list of Kits to create or update the Campaigns,
+Places, and Content in that Kit. If you don't yet have a Kit, or want to
+add another, click the Add Kit button.
 
 ## What is a "Campaign"?
 Campaigns are the packaging of the content, including textual and media assets,
