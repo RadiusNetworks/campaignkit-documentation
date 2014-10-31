@@ -32,7 +32,6 @@ https://github.com/RadiusNetworks/campaignkit-reference-android
 
 
 2. Implement CampaignKitNotifier and CampaignKitManager
-
  * Open the Application class in your project. If you don't have one, create a class that extends Application.
 
  * Type 'extends Application implements CampaignKitNotifier" after the class name in its declaration. At first, it'll say that class is unrecognized. You need to quick fix or manually import the CampaignKitNotifier class to resolve the error.
@@ -40,19 +39,18 @@ https://github.com/RadiusNetworks/campaignkit-reference-android
  * Add all required methods for the CampaignKitNotifier. Quick-fix can do this for you (move your cursor onto CampaignKitNotifer and press ALT + ENTER on Android Studio or CMD + 1 on Eclipse for mac).
 
  * In your Application class, add a private instance of CampaignKitManager. At first, it'll say that class is unrecognized. You need to quick fix or manually import the CampaignKitManager class to resolve the error. It should look like this:
-```java
-private CampaignKitManager _ckManager;
-```
-
+ ```java
+ private CampaignKitManager _ckManager;
+ ```
  * In the Application class's onCreate() method, add the following code:
-```java 
+ ```java 
     _ckManager = CampaignKitManager.getInstanceForApplication(this);
     _ckManager.start();
     _ckManager.setNotifier(this);
-```
+ ```
  * So your Application class should look like this now:
-```java
-public class MyApplication extends Application implements CampaignKitNotifier {
+ ```java
+ public class MyApplication extends Application implements CampaignKitNotifier {
 
     public CampaignKitManager _ckManager;
 
@@ -66,7 +64,7 @@ public class MyApplication extends Application implements CampaignKitNotifier {
         _ckManager.start();
 
     }
-```
+ ```
 
 3. Handle didFindCampaign callback from CampaignKitNotifier
 ```java
@@ -99,7 +97,7 @@ Campaign Kit.
    - Android SDK Manager > Extras > Google Play services
 
 2. If using Android Studio, Include the Google Play services as a dependency in `app/build.gradle`:
-```groovy
+ ```groovy
   // PROJECT_ROOT/app/build.gradle
   dependencies {
       compile 'com.android.support:appcompat-v7:+'
@@ -107,22 +105,22 @@ Campaign Kit.
       compile fileTree(dir: 'libs', include: ['*.jar'])
       compile project(":campaignkit-android")
   }
-```
-
+ ```
+ 
 3. Declare the Google Play service in the app's `AndroidManifest.xml` under the
    `<application>` section:
-```xml
+ ```xml
   <meta-data
       android:name="com.google.android.gms.version"
       android:value="@integer/google_play_services_version" />
-```
+ ```
 
 4. Declare that the app needs to request `ACCESS_FINE_LOCATION`. To request
    this permission, add the following element as a child element of the
    `<manifest>` element:
-```groovy
+ ```groovy
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-```
+ ```
 
 5. Check for Google Play support. For the most recent suggestions by Google,
    please refer to the [Android documentation on checking for Google Play
@@ -147,7 +145,7 @@ Campaign Kit.
   > appropriate message about the error and provides an action that takes the
   > user to Google Play Store to install the update.
   
-```java
+ ```java
   /**
    * Verify that Google Play services is available before making a request.
    *
@@ -217,10 +215,10 @@ Campaign Kit.
       }
   }
 
-```
+ ```
 
 6. If Google Play is available, enable geofences for Campaign Kit.
-```java
+ ```java
 
   ckManager = CampaignKitManager.getInstanceForApplication(this);
   if (servicesConnected()) {
@@ -233,4 +231,4 @@ Campaign Kit.
   ckManager.setNotifier(this);
   ckManager.start()
 
-```
+ ```
