@@ -61,6 +61,7 @@ https://github.com/RadiusNetworks/campaignkit-reference-android
         _ckManager.start();
 
     }
+  }
  ```
 
 3. Handle didFindCampaign callback from CampaignKitNotifier
