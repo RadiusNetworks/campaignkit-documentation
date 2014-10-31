@@ -47,7 +47,7 @@ https://github.com/RadiusNetworks/campaignkit-reference-android
  ```
  * So your Application class should look like this now:
  ```java
-  public class MyApplication extends Application implements CampaignKitNotifier {
+ public class MyApplication extends Application implements CampaignKitNotifier {
 
     public CampaignKitManager _ckManager;
 
@@ -61,7 +61,7 @@ https://github.com/RadiusNetworks/campaignkit-reference-android
         _ckManager.start();
 
     }
-  }
+ }
  ```
 
 3. Handle didFindCampaign callback from CampaignKitNotifier
