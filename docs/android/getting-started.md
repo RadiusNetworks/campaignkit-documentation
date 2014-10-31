@@ -28,10 +28,10 @@ https://github.com/RadiusNetworks/campaignkit-reference-android
 ##Getting Started
 
 
-1) If you haven't downloaded the Campaign Kit Library and set it up as a dependent library to your project, please [DO THAT FIRST](https://github.com/RadiusNetworks/campaignkit-documentation/blob/master/docs/android/download.md).
+1. If you haven't downloaded the Campaign Kit Library and set it up as a dependent library to your project, please [DO THAT FIRST](https://github.com/RadiusNetworks/campaignkit-documentation/blob/master/docs/android/download.md).
 
 
-2) Implement CampaignKitNotifier and CampaignKitManager
+2. Implement CampaignKitNotifier and CampaignKitManager
 
  * Open the Application class in your project. If you don't have one, create a class that extends Application.
 
@@ -68,7 +68,7 @@ public class MyApplication extends Application implements CampaignKitNotifier {
     }
 ```
 
-3) Handle didFindCampaign callback from CampaignKitNotifier
+3. Handle didFindCampaign callback from CampaignKitNotifier
 ```java
 
   @Override
@@ -91,14 +91,14 @@ Since geofence support is relatively new, it is disabled by default. Below are
 the steps necessary to configure a sample app to use geofences through
 Campaign Kit.
 
-1) Install Google Play services. Due to the differences between Eclipse and
+1. Install Google Play services. Due to the differences between Eclipse and
    Android Studio please refer to the [Google Setup docs](https://developer.android.com/google/play-services/setup.html)
    for the proper IDE instructions.
 
 
    - Android SDK Manager > Extras > Google Play services
 
-2) If using Android Studio, Include the Google Play services as a dependency in `app/build.gradle`:
+2. If using Android Studio, Include the Google Play services as a dependency in `app/build.gradle`:
 ```groovy
   // PROJECT_ROOT/app/build.gradle
   dependencies {
@@ -109,7 +109,7 @@ Campaign Kit.
   }
 ```
 
-3) Declare the Google Play service in the app's `AndroidManifest.xml` under the
+3. Declare the Google Play service in the app's `AndroidManifest.xml` under the
    `<application>` section:
 ```xml
   <meta-data
@@ -117,14 +117,14 @@ Campaign Kit.
       android:value="@integer/google_play_services_version" />
 ```
 
-4) Declare that the app needs to request `ACCESS_FINE_LOCATION`. To request
+4. Declare that the app needs to request `ACCESS_FINE_LOCATION`. To request
    this permission, add the following element as a child element of the
    `<manifest>` element:
 ```groovy
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 ```
 
-5) Check for Google Play support. For the most recent suggestions by Google,
+5. Check for Google Play support. For the most recent suggestions by Google,
    please refer to the [Android documentation on checking for Google Play
    services support](https://developer.android.com/google/play-services/setup.html#ensure).
 
@@ -146,10 +146,8 @@ Campaign Kit.
   > code. This returns a `Dialog` you should show, which provides an
   > appropriate message about the error and provides an action that takes the
   > user to Google Play Store to install the update.
-
-
+  
 ```java
-
   /**
    * Verify that Google Play services is available before making a request.
    *
@@ -221,7 +219,7 @@ Campaign Kit.
 
 ```
 
-6) If Google Play is available, enable geofences for Campaign Kit.
+6. If Google Play is available, enable geofences for Campaign Kit.
 ```java
 
   ckManager = CampaignKitManager.getInstanceForApplication(this);
