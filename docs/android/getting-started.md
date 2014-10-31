@@ -36,17 +36,17 @@ https://github.com/RadiusNetworks/campaignkit-reference-android
  * Type 'extends Application implements CampaignKitNotifier" after the class name in its declaration. At first, it'll say that class is unrecognized. You need to quick fix or manually import the CampaignKitNotifier class to resolve the error.
  * Add all required methods for the CampaignKitNotifier. Quick-fix can do this for you (move your cursor onto CampaignKitNotifer and press ALT + ENTER on Android Studio or CMD + 1 on Eclipse for mac).
  * In your Application class, add a private instance of CampaignKitManager. At first, it'll say that class is unrecognized. You need to quick fix or manually import the CampaignKitManager class to resolve the error. It should look like this:
-  ```java
+ ```java
   private CampaignKitManager _ckManager;
-  ```
+ ```
  * In the Application class's onCreate() method, add the following code:
-  ```java 
+ ```java 
     _ckManager = CampaignKitManager.getInstanceForApplication(this);
     _ckManager.start();
     _ckManager.setNotifier(this);
-  ```
+ ```
  * So your Application class should look like this now:
-  ```java
+ ```java
   public class MyApplication extends Application implements CampaignKitNotifier {
 
     public CampaignKitManager _ckManager;
@@ -61,7 +61,7 @@ https://github.com/RadiusNetworks/campaignkit-reference-android
         _ckManager.start();
 
     }
-  ```
+ ```
 
 3. Handle didFindCampaign callback from CampaignKitNotifier
  ```java
