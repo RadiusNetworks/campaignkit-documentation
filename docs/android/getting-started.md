@@ -40,13 +40,11 @@ https://github.com/RadiusNetworks/campaignkit-reference-android
  * Add all required methods for the CampaignKitNotifier. Quick-fix can do this for you (move your cursor onto CampaignKitNotifer and press ALT + ENTER on Android Studio or CMD + 1 on Eclipse for mac).
 
  * In your Application class, add a private instance of CampaignKitManager. At first, it'll say that class is unrecognized. You need to quick fix or manually import the CampaignKitManager class to resolve the error. It should look like this:
-
 ```java
 private CampaignKitManager _ckManager;
 ```
 
  * In the Application class's onCreate() method, add the following code:
-
 ```java 
     _ckManager = CampaignKitManager.getInstanceForApplication(this);
     _ckManager.start();
@@ -71,7 +69,6 @@ public class MyApplication extends Application implements CampaignKitNotifier {
 ```
 
 3) Handle didFindCampaign callback from CampaignKitNotifier
-
 ```java
 
   @Override
@@ -102,7 +99,6 @@ Campaign Kit.
    - Android SDK Manager > Extras > Google Play services
 
 2) If using Android Studio, Include the Google Play services as a dependency in `app/build.gradle`:
-
 ```groovy
   // PROJECT_ROOT/app/build.gradle
   dependencies {
@@ -115,7 +111,6 @@ Campaign Kit.
 
 3) Declare the Google Play service in the app's `AndroidManifest.xml` under the
    `<application>` section:
-
 ```xml
   <meta-data
       android:name="com.google.android.gms.version"
@@ -125,7 +120,6 @@ Campaign Kit.
 4) Declare that the app needs to request `ACCESS_FINE_LOCATION`. To request
    this permission, add the following element as a child element of the
    `<manifest>` element:
-
 ```groovy
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 ```
@@ -228,7 +222,6 @@ Campaign Kit.
 ```
 
 6) If Google Play is available, enable geofences for Campaign Kit.
-
 ```java
 
   ckManager = CampaignKitManager.getInstanceForApplication(this);
