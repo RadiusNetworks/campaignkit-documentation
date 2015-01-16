@@ -59,6 +59,8 @@
 	
 	<option value="//api/name/campaignWithId:">&nbsp;&nbsp;&nbsp;&nbsp;- campaignWithId:</option>
 	
+	<option value="//api/name/handleRemoteNotification:fetchCompletionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- handleRemoteNotification:fetchCompletionHandler:</option>
+	
 	<option value="//api/name/pruneExpiredCampaigns">&nbsp;&nbsp;&nbsp;&nbsp;- pruneExpiredCampaigns</option>
 	
 	<option value="//api/name/recordAnalytics:forCampaign:">&nbsp;&nbsp;&nbsp;&nbsp;- recordAnalytics:forCampaign:</option>
@@ -68,6 +70,10 @@
 	<option value="//api/name/recordAnalytics:forCampaign:atPlaceId:">&nbsp;&nbsp;&nbsp;&nbsp;- recordAnalytics:forCampaign:atPlaceId:</option>
 	
 	<option value="//api/name/removeCampaign:">&nbsp;&nbsp;&nbsp;&nbsp;- removeCampaign:</option>
+	
+	<option value="//api/name/setCampaignFulfilled:atPlace:">&nbsp;&nbsp;&nbsp;&nbsp;- setCampaignFulfilled:atPlace:</option>
+	
+	<option value="//api/name/setCampaignViewed:">&nbsp;&nbsp;&nbsp;&nbsp;- setCampaignViewed:</option>
 	
 	<option value="//api/name/setPartnerIdentifier:">&nbsp;&nbsp;&nbsp;&nbsp;- setPartnerIdentifier:</option>
 	
@@ -125,6 +131,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/campaignWithId:">campaignWithId:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/handleRemoteNotification:fetchCompletionHandler:">handleRemoteNotification:fetchCompletionHandler:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pruneExpiredCampaigns">pruneExpiredCampaigns</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/recordAnalytics:forCampaign:">recordAnalytics:forCampaign:</a></span></li>
@@ -134,6 +142,10 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/recordAnalytics:forCampaign:atPlaceId:">recordAnalytics:forCampaign:atPlaceId:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeCampaign:">removeCampaign:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setCampaignFulfilled:atPlace:">setCampaignFulfilled:atPlace:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setCampaignViewed:">setCampaignViewed:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setPartnerIdentifier:">setPartnerIdentifier:</a></span></li>
 	
@@ -244,6 +256,12 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/handleRemoteNotification:fetchCompletionHandler:">&ndash;&nbsp;handleRemoteNotification:fetchCompletionHandler:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/addCampaign:">&ndash;&nbsp;addCampaign:</a></code>
 	</span>
 	
@@ -263,6 +281,18 @@
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/setPartnerIdentifier:">&ndash;&nbsp;setPartnerIdentifier:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setCampaignViewed:">&ndash;&nbsp;setCampaignViewed:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setCampaignFulfilled:atPlace:">&ndash;&nbsp;setCampaignFulfilled:atPlace:</a></code>
 	</span>
 	
 	
@@ -532,6 +562,62 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/handleRemoteNotification:fetchCompletionHandler:" title="handleRemoteNotification:fetchCompletionHandler:"></a>
+	<h3 class="subsubtitle method-title">handleRemoteNotification:fetchCompletionHandler:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>handleRemoteNotification:fetchCompletionHandler:</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)handleRemoteNotification:(NSDictionary *)<em>userInfo</em> fetchCompletionHandler:(void ( ^ ) ( UIBackgroundFetchResult ))<em>completionHandler</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Takes the <code>userInfo</code> from a remote notification payload, syncs if necessary and triggers <a href="#//api/name/campaigns">campaigns</a>
+if there are any for the current location.</p>
+
+<p>Currently this method will cause a <a href="#//api/name/sync">sync</a> if any Places from your kit have been detected in the
+last 6 hours.  This is to handle the use case where a user might already be at a location, a new campaign
+is added for that location, and a &ldquo;silent&rdquo; push notification is sent in order to trigger this new campaign.</p>
+
+<p>Example Usage:</p>
+
+<pre><code>- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+    fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    NSLog(@"Remote Notification received");
+    [self.campaignKitManager handleRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+}
+</code></pre>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CKManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/pruneExpiredCampaigns" title="pruneExpiredCampaigns"></a>
 	<h3 class="subsubtitle method-title">pruneExpiredCampaigns</h3>
 	
@@ -688,6 +774,85 @@
     
 
 	<div class="method-subsection method-declaration"><code>- (void)removeCampaign:(CKCampaign *)<em>campaign</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CKManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setCampaignFulfilled:atPlace:" title="setCampaignFulfilled:atPlace:"></a>
+	<h3 class="subsubtitle method-title">setCampaignFulfilled:atPlace:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Mark a campaign as &ldquo;fulfilled&rdquo; for the purposes of <a href="../docs/Docs/analytics.html">analytics</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setCampaignFulfilled:(CKCampaign *)<em>campaign</em> atPlace:(CKPlace *)<em>place</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Note: if you have set a fulfillment/redemption place for a campaign, this will happen
+automatically when that place is encountered.  A campaign must have been &ldquo;viewed&rdquo; in
+order for it to be fulfilled.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CKManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setCampaignViewed:" title="setCampaignViewed:"></a>
+	<h3 class="subsubtitle method-title">setCampaignViewed:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Mark a campaign as &ldquo;viewed&rdquo; for the purposes of <a href="../docs/Docs/analytics.html">analytics</a>.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setCampaignViewed:(CKCampaign *)<em>campaign</em></code></div>
 
     
 	
@@ -949,7 +1114,7 @@ application <a href="#//api/name/delegate">delegate</a>. Then within that method
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 Radius Networks. All rights reserved. (Last updated: 2014-09-22)</span><br />
+						<p><span class="copyright">&copy; 2015 Radius Networks. All rights reserved. (Last updated: 2015-01-16)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
