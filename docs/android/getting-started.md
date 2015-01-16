@@ -3,12 +3,13 @@
 
 Requirements for use: 
 
-* Android API Level 18 or higher
+* Android API Level 18 or higher to use AltBeacon features.
 
-* Google Play Services library set as a dependency if using Geofencing features.
+* Android API Level 9 or higher to use Geofencing features.
+
+* Google Play Services library version 5.+ set as a dependency.
 
 * CampaignKit.properties file downloaded from campaignkit.radiusnetworks.com.
-
 
 
 
@@ -28,33 +29,28 @@ https://github.com/RadiusNetworks/campaignkit-reference-android
 ##Getting Started
 
 
-1) If you haven't downloaded the Campaign Kit Library and set it up as a dependent library to your project, please [DO THAT FIRST](https://github.com/RadiusNetworks/campaignkit-documentation/blob/master/docs/android/download.md).
+1. If you haven't downloaded the Campaign Kit Library and set it up as a dependent library to your project, please [DO THAT FIRST](https://github.com/RadiusNetworks/campaignkit-documentation/blob/master/docs/android/download.md).
 
 
-2) Implement CampaignKitNotifier and CampaignKitManager
-
+2. Implement CampaignKitNotifier and CampaignKitManager
  * Open the Application class in your project. If you don't have one, create a class that extends Application.
-
  * Type 'extends Application implements CampaignKitNotifier" after the class name in its declaration. At first, it'll say that class is unrecognized. You need to quick fix or manually import the CampaignKitNotifier class to resolve the error.
-
  * Add all required methods for the CampaignKitNotifier. Quick-fix can do this for you (move your cursor onto CampaignKitNotifer and press ALT + ENTER on Android Studio or CMD + 1 on Eclipse for mac).
-
  * In your Application class, add a private instance of CampaignKitManager. At first, it'll say that class is unrecognized. You need to quick fix or manually import the CampaignKitManager class to resolve the error. It should look like this:
-
-```java
-private CampaignKitManager _ckManager;
-```
-
+ ```java
+     private CampaignKitManager _ckManager;
+ ```
+ 
  * In the Application class's onCreate() method, add the following code:
-
-```java 
+ ```java 
     _ckManager = CampaignKitManager.getInstanceForApplication(this);
     _ckManager.start();
     _ckManager.setNotifier(this);
-```
+ ```
+ 
  * So your Application class should look like this now:
-```java
-public class MyApplication extends Application implements CampaignKitNotifier {
+ ```java
+ public class MyApplication extends Application implements CampaignKitNotifier {
 
     public CampaignKitManager _ckManager;
 
@@ -68,11 +64,11 @@ public class MyApplication extends Application implements CampaignKitNotifier {
         _ckManager.start();
 
     }
-```
+ }
+ ```
 
-3) Handle didFindCampaign callback from CampaignKitNotifier
-
-```java
+3. Handle didFindCampaign callback from CampaignKitNotifier
+ ```java
 
   @Override
   public void didFindCampaign(Campaign campaign) {
@@ -84,8 +80,7 @@ public class MyApplication extends Application implements CampaignKitNotifier {
   public void showCampaign(Campaign campaign){
     // TODO: write custom code or use code from the Campaign Kit reference app
   }
-```
-
+ ```
 
 
 ##Adding Geofence Support
@@ -94,43 +89,40 @@ Since geofence support is relatively new, it is disabled by default. Below are
 the steps necessary to configure a sample app to use geofences through
 Campaign Kit.
 
-1) Install Google Play services. Due to the differences between Eclipse and
+1. Install Google Play services. Due to the differences between Eclipse and
    Android Studio please refer to the [Google Setup docs](https://developer.android.com/google/play-services/setup.html)
    for the proper IDE instructions.
 
 
    - Android SDK Manager > Extras > Google Play services
 
-2) If using Android Studio, Include the Google Play services as a dependency in `app/build.gradle`:
-
-```groovy
+2. If using Android Studio, Include the Google Play services as a dependency in `app/build.gradle`:
+ ```groovy
   // PROJECT_ROOT/app/build.gradle
   dependencies {
       compile 'com.android.support:appcompat-v7:+'
-      compile 'com.google.android.gms:play-services:+'
+      compile 'com.google.android.gms:play-services:5.+'
       compile fileTree(dir: 'libs', include: ['*.jar'])
       compile project(":campaignkit-android")
   }
-```
-
-3) Declare the Google Play service in the app's `AndroidManifest.xml` under the
+ ```
+ 
+3. Declare the Google Play service in the app's `AndroidManifest.xml` under the
    `<application>` section:
-
-```xml
+ ```xml
   <meta-data
       android:name="com.google.android.gms.version"
       android:value="@integer/google_play_services_version" />
-```
+ ```
 
-4) Declare that the app needs to request `ACCESS_FINE_LOCATION`. To request
+4. Declare that the app needs to request `ACCESS_FINE_LOCATION`. To request
    this permission, add the following element as a child element of the
    `<manifest>` element:
-
-```groovy
+ ```groovy
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-```
+ ```
 
-5) Check for Google Play support. For the most recent suggestions by Google,
+5. Check for Google Play support. For the most recent suggestions by Google,
    please refer to the [Android documentation on checking for Google Play
    services support](https://developer.android.com/google/play-services/setup.html#ensure).
 
@@ -152,10 +144,8 @@ Campaign Kit.
   > code. This returns a `Dialog` you should show, which provides an
   > appropriate message about the error and provides an action that takes the
   > user to Google Play Store to install the update.
-
-
-```java
-
+  
+ ```java
   /**
    * Verify that Google Play services is available before making a request.
    *
@@ -225,11 +215,10 @@ Campaign Kit.
       }
   }
 
-```
+ ```
 
-6) If Google Play is available, enable geofences for Campaign Kit.
-
-```java
+6. If Google Play is available, enable geofences for Campaign Kit.
+ ```java
 
   ckManager = CampaignKitManager.getInstanceForApplication(this);
   if (servicesConnected()) {
@@ -242,4 +231,4 @@ Campaign Kit.
   ckManager.setNotifier(this);
   ckManager.start()
 
-```
+ ```
