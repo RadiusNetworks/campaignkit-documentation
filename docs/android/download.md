@@ -10,7 +10,7 @@ Requirements for use:
 
 * Android API Level 9 or higher to use Geofencing features.
 
-* Google Play Services library version 5.+ set as a dependency.
+* Google Play Services library set as a dependency. The library version must be within the range of 4.2 and 6.5.87.
 
 * CampaignKit.properties file downloaded from campaignkit.radiusnetworks.com.
 
@@ -56,13 +56,13 @@ Requirements for use:
 
 4) Adjust Build Settings
 
- * In the main folder of your project, you will find a project.properites file. On a new line, add in "manifestmerger.enabled=true".
+ * In the main folder of your project, you will find a project.properties file. On a new line, add in "manifestmerger.enabled=true".
 
- * In AndroidManifest.xml, set minSdkVersion = 18 and set your targetSdkVersion to 18 or higher. Here's a sample of what that should look like:
+ * In AndroidManifest.xml, set minSdkVersion to 7 or higher and set your targetSdkVersion to 18 or higher. Here's a sample of what that should look like:
 
 ```xml
      <uses-sdk
-        android:minSdkVersion="18"
+        android:minSdkVersion="7"
         android:targetSdkVersion="19" />
 ```
  * Adjust your minSdkVersion, targetSdkVersion, compileSdkVersion and buildToolsVersion within the build.gradle file of your project to match what you have in AndroidManifest.xml. Here's a sample that will match our AndroidManifest.xml sample listed above.
@@ -74,7 +74,7 @@ android {
 
     defaultConfig {
         applicationId "com.radiusnetworks.campaignkitreference"
-        minSdkVersion 18
+        minSdkVersion 7
         targetSdkVersion 19
         versionCode 1
         versionName "1.0"
@@ -142,11 +142,11 @@ android {
 
  * In the main folder of your project, you will find a project.properties file. On a new line, add in "manifestmerger.enabled=true".
 
- * In AndroidManifest.xml, set minSdkVersion = 18 and set your targetSdkVersion to 18 or higher. Here's a sample of what that should look like:
+ * In AndroidManifest.xml, set minSdkVersion to 7 or higher and set your targetSdkVersion to 18 or higher. Here's a sample of what that should look like:
 
 ```xml
      <uses-sdk
-        android:minSdkVersion="18"
+        android:minSdkVersion="7"
         android:targetSdkVersion="19" />
 ```
 
