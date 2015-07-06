@@ -12,6 +12,9 @@ Campaign Kit is a cloud-based service coupled with mobile SDKs that enables you 
 * [JavaDocs](http://developer.radiusnetworks.com/campaignkit/android/javadocs/index.html)
 * [Notes on suppressing multiple notifications](http://developer.radiusnetworks.com/campaignkit/android/suppressing-multiple-campaigns.html)
 
+# Admin API Documentation
+* [Restful JSON Admin API](api)
+
 # Component Overview
 
 ## What is a Kit?
