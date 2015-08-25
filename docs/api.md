@@ -36,9 +36,9 @@ The content type is `vnd+json`, and should be set in the Content-Type header:
 
 # Resources
 
-- [Root Endpoint](api/v1/root_endpoint.md)
-- [Kits](api/v1/kits.md)
-- [Campaigns](api/v1/campaigns.md)
-- [Assets](api/v1/assets.md)
-- [Contents](api/v1/contents.md)
-- [Places](api/v1/places.md)
+- [Root Endpoint](api/v1/root_endpoint)
+- [Kits](api/v1/kits)
+- [Campaigns](api/v1/campaigns)
+- [Assets](api/v1/assets)
+- [Contents](api/v1/contents)
+- [Places](api/v1/places)
