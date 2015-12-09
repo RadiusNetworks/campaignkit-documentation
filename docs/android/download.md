@@ -1,154 +1,120 @@
+# Download Campaign Kit for Android
 
-# Download Campaign Kit Library for Android Client
-
-
-Requirements for use: 
+Requirements for use:
 
 * Minimum Android API Level 7.
-
 * Android API Level 18 or higher to use AltBeacon features.
-
 * Android API Level 9 or higher to use Geofencing features.
-
-* Google Play Services library set as a dependency. The library version must be within the range of 4.2 and 6.5.87.
-
-* CampaignKit.properties file downloaded from campaignkit.radiusnetworks.com.
-
-
-
-##If Using Android Studio (we recommend Android Studio v1.0 with gradle 2.2.1):
+* Google Play Services library set as a dependency. The library version must be
+  within the range of 4.2 - 8.x
+* `CampaignKit.properties` file downloaded from
+  https://campaignkit.radiusnetworks.com
 
 
-1) Download the latest [.aar library file](https://github.com/RadiusNetworks/campaignkit-android/releases)
- 
+## Using Android Studio
 
-2) Add the library as a dependency to your project
+We suggest using [Android Studio](https://developer.android.com/sdk/index.html)
+1.2 or later with [Gradle](http://gradle.org) 2.2.1+. This guide assumes a
+default application project layout. `PROJECT_ROOT` is the directory where your
+project resides and `app` is the main application module.
 
- * Drag and drop the .aar file into your Android Studio Project's "libs" folder. This should be next to your "src" folder. If there is no "libs" folder, create one. 
+1. Download the latest [`.aar` library file](https://github.com/RadiusNetworks/campaignkit-android/releases/latest)
+2. Add the library as a dependency to your project
+  * Place the `.aar` file into your Android Studio project's `libs/` directory:
+    `PROJECT_ROOT/app/libs`.  This should be next to your `src/` folder. If
+    there is no `libs/` directory create one.
+  * Next to your `src/` and `libs/` folder, there should be a `build.gradle`
+    file: `PROJECT_ROOT/app/build.gradle`. Open it and include the following:
 
- * Next to your "src" and "libs" folder, there should be a build.gradle file. Open that and include the following:
-
-```java
-  dependencies {
-      compile fileTree(dir: 'libs', include: ['*.jar'])
-      compile 'com.radiusnetworks:campaignkit-android:0+@aar'
-  }
-
-  repositories {
-      mavenCentral()
-      flatDir {
-          dirs 'libs'
-      }
-  }
-```
-
-
-3) Insert CampaignKit.properties file
-
- * Log into campaignkit.radiusnetworks.com.
-
- * Select a kit from the drop-down menu. Create one and add in some content, places, and campaigns.
-
- * On the kit overview page, click the android button in the top right corner. This will download your CampaignKit.properties file.
-
- * Copy the CampaignKit.properties file into the /src/main/resources folder of your project. Most likely, you will have to create this folder yourself. Please note that this is NOT to be confused with the /src/main/res folder.
-
-
-4) Adjust Build Settings
-
- * In the main folder of your project, you will find a project.properties file. On a new line, add in "manifestmerger.enabled=true".
-
- * In AndroidManifest.xml, set minSdkVersion to 7 or higher and set your targetSdkVersion to 18 or higher. Here's a sample of what that should look like:
-
-```xml
-     <uses-sdk
-        android:minSdkVersion="7"
-        android:targetSdkVersion="19" />
-```
- * Adjust your minSdkVersion, targetSdkVersion, compileSdkVersion and buildToolsVersion within the build.gradle file of your project to match what you have in AndroidManifest.xml. Here's a sample that will match our AndroidManifest.xml sample listed above.
-
-```java
-android {
-    compileSdkVersion 19
-    buildToolsVersion '19.1.0'
-
-    defaultConfig {
-        applicationId "com.radiusnetworks.campaignkitreference"
-        minSdkVersion 7
-        targetSdkVersion 19
-        versionCode 1
-        versionName "1.0"
+    ```gradle
+    dependencies {
+        compile fileTree(dir: 'libs', include: ['*.jar'])
+        compile 'com.radiusnetworks:campaignkit-android:0+@aar'
     }
-    buildTypes {
-        release {
-            runProguard false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+    repositories {
+        jcenter()
+        flatDir {
+            dirs 'libs'
         }
     }
-}
-```
+    ```
+3. Setup the `CampaignKit.properties` file
+  * Log into https://campaignkit.radiusnetworks.com.
+  * Select an existing kit from the drop-down menu or create a new one.
+  * Add some content, places, and campaigns.
+  * On the Campaign Activity, Kit overview, page click the Android button to
+    download the `CampaignKit.properties` file.
+  * In Android Studio, import the `CampaignKit.properties` file as an _asset_.
+    Alternatively, move the `CampaignKit.properties` file directly into the
+    _assets_ directory: `PROJECT_ROOT/app/src/main/asseets`. You may have to
+    create this directory first.
+4. Adjust the build settings
+
+  In the application module's `build.gradle` file, be sure to set
+  `minSdkVersion`, `compileSdkVersion`, `targetSdkVersion`, and
+  `buildToolsVersion` according to your requirements.
+
+  ```gradle
+  android {
+      compileSdkVersion 23
+      buildToolsVersion "23.0.2"
+
+      defaultConfig {
+          minSdkVersion 7
+          targetSdkVersion 23
+      }
+  }
+  ```
+5. On the top bar of Android Studio click the "Build" drop down and select
+   "Rebuild Project" to make sure everything is configured correctly.
+
+See the [Getting Started](getting-started) guide for details on using Campaign
+Kit in your app.
 
 
-5)  On the top bar of Android Studio click the "Build" drop down, and select "Rebuild project".
+## Using Eclipse
 
+1. Download the latest [.tar.gz library file](https://github.com/RadiusNetworks/campaignkit-android/releases/latest)
+2. Add the library as a dependency to your project
+  * Double click the `.tar.gz` file, this will produce a directory containing the library.
+  * Import the library as an Android Project to your workspace.
 
+    ![alt tag](https://raw.githubusercontent.com/RadiusNetworks/campaignkit-documentation/master/docs/android/screenshots/importing.png)
+  * Right-click the library and open the Properties menu.
+  * Select the Android tab on the left side of the window.
+  * Make sure the library has the "is Library" checkbox checked.
 
+    ![alt tag](https://raw.githubusercontent.com/RadiusNetworks/campaignkit-documentation/master/docs/android/screenshots/cklibrary_islibrary.png)
+  * Right-click your project and open the Properties menu.
+  * Select the Android tab on the left side of the window.
+  * Add the `campaignkit-android` as a library.
 
+    ![alt tag](https://raw.githubusercontent.com/RadiusNetworks/campaignkit-documentation/master/docs/android/screenshots/adding_cklibrary.png)
+  * Afterwards, your project's Android properties should look like this:
 
+    ![alt tag](https://raw.githubusercontent.com/RadiusNetworks/campaignkit-documentation/master/docs/android/screenshots/project_settings.png)
+3. Setup the `CampaignKit.properties` file
+  * Log into https://campaignkit.radiusnetworks.com.
+  * Select an existing kit from the drop-down menu or create a new one.
+  * Add some content, places, and campaigns.
+  * On the Campaign Activity, Kit overview, page click the Android button to
+    download the `CampaignKit.properties` file.
+  * Move the `CampaignKit.properties` file into the `src/` folder of your project.
+4. Adjust Build Settings
+  * In the main folder of your project, find the `project.properties` file. On
+    a new line, add `manifestmerger.enabled=true`.
+  * In the `AndroidManifest.xml`, set the `minSdkVersion` and
+    `targetSdkVersion` according to your requirements.
 
-##If Using the Eclipse IDE
-
-
-1) Download the latest [.tar.gz library file](https://github.com/RadiusNetworks/campaignkit-android/releases) Campaign Kit Library for Android Client.
- 
-
-2) Add the library as a dependency to your project
-
- * Double click the .tar.gz file, this will produce a folder containing the library.
-
- * Import the library as an Android Project to your workspace.
-![alt tag](https://raw.githubusercontent.com/RadiusNetworks/campaignkit-documentation/master/docs/android/screenshots/importing.png) 
-
- * Right-click the library and open the Properties menu.
-
- * Select the Android tab on the left side of the window.
-
- * Make sure the library has the "is Library" checkbox checked.
-![alt tag](https://raw.githubusercontent.com/RadiusNetworks/campaignkit-documentation/master/docs/android/screenshots/cklibrary_islibrary.png) 
-
- * Right-click your project and open the Properties menu.
-
- * Select the Android tab on the left side of the window.
-
- * Add the campaignkit-android as a library.
-![alt tag](https://raw.githubusercontent.com/RadiusNetworks/campaignkit-documentation/master/docs/android/screenshots/adding_cklibrary.png) 
-
- * Afterwards, your project's Android properties should look like this:
-![alt tag](https://raw.githubusercontent.com/RadiusNetworks/campaignkit-documentation/master/docs/android/screenshots/project_settings.png)
-
-
-3) Insert CampaignKit.properties file
-
- * Log into campaignkit.radiusnetworks.com.
-
- * Select a kit from the drop-down menu. Create one and add in some content, places, and campaigns.
-
- * On the kit overview page, click the Android Button in the top right corner. This will download your CampaignKit.properties file.
-
- * Copy the CampaignKit.properties file into the /src folder of your project.
-
-
-4) Adjust Build Settings
-
- * In the main folder of your project, you will find a project.properties file. On a new line, add in "manifestmerger.enabled=true".
-
- * In AndroidManifest.xml, set minSdkVersion to 7 or higher and set your targetSdkVersion to 18 or higher. Here's a sample of what that should look like:
-
-```xml
-     <uses-sdk
+    ```xml
+    <uses-sdk
         android:minSdkVersion="7"
         android:targetSdkVersion="19" />
-```
+    ```
+5. On the top bar of Eclipse click the "Project" drop down, and select
+   "Clean..." for all projects.
 
-5)  On the top bar of Eclipse click the "Project" drop down, and select "Clean..." for all projects.
+See the [Getting Started](getting-started) guide for details on using Campaign
+Kit in your app.
 
