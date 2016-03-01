@@ -20,7 +20,7 @@ Campaign Kit is a cloud-based service coupled with mobile SDKs that enables you 
 
 # Component Overview
 
-## What is a Kit?
+### What is a Kit?
 A Kit is the high level container encompassing all the required resources you'll need to
 create and deliver powerful proximity campaigns to your mobile application users. Each
 Kit will contain the places where your campaigns will be triggered, the content that will
@@ -36,7 +36,7 @@ Select a Kit from the drop-down list of Kits to create or update the Campaigns,
 Places, and Content in that Kit. If you don't yet have a Kit, or want to
 add another, click the Add Kit button.
 
-## What is a "Campaign"?
+### What is a "Campaign"?
 Campaigns are the packaging of the content, including textual and media assets,
 that will be offered in the places associated to your campaign.
 
@@ -49,7 +49,7 @@ enabling rapid creation and swift delivery of your campaign to all of your targe
 
 Campaigns are available during the start and stop times defined in a campaign when active.
 
-## What is a "Place"?
+### What is a "Place"?
 Places define which locations, when in proximity, will trigger your campaigns to be
 rendered to your mobile audience. When you create a campaign it can be connected to
 any of your defined places.
@@ -63,7 +63,7 @@ For example, you may want to define a top level place named "North America Regio
 Under that you could create a place for each location facility that will be part of your region.
 And finally you will need to define each beacon that belongs to each location.
 
-## What is "Content"?
+### What is "Content"?
 Content is the collection of textual and media assets that are available to be attached to
 campaigns and presented to the user based on the behavior defined by the campaign event logic.
 
