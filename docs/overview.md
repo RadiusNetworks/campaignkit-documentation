@@ -8,7 +8,7 @@ Campaign Kit is a cloud-based service coupled with mobile SDKs that enables you 
 
 # Android Documentation
 * [Download & Release Notes](https://github.com/RadiusNetworks/campaignkit-android/releases/latest)
-* [Getting Started](http://developer.radiusnetworks.com/campaignkit/android/getting-started.html)
+* [Getting Started](android/getting-started)
 * [JavaDocs](http://developer.radiusnetworks.com/campaignkit/android/javadocs/index.html)
 * [Notes on suppressing multiple notifications](http://developer.radiusnetworks.com/campaignkit/android/suppressing-multiple-campaigns.html)
 
