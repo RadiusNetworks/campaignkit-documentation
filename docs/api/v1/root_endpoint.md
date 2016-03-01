@@ -10,7 +10,7 @@ this API supports.
 
 ## Headers <a href="#headers" id="headers" class="headerlink"></a>
 
-### Authorization <a href="#authorization" id="authorization" class="headerlink"></a>
+#### Authorization <a href="#authorization" id="authorization" class="headerlink"></a>
 
 The API Key is passed via the Authorization header:
 
@@ -28,7 +28,7 @@ If you do not have an API key, [you can create one here](https://account.radiusn
 **Note:** Per [RFC 2616](http://www.w3.org/Protocols/rfc2616/rfc2616-sec2.html#sec2.2) the Authorization Header's token needs to be
 surrounded by double quotes (`"`).
 
-### Content Type <a href="#content-type" id="content-type" class="headerlink"></a>
+#### Content Type <a href="#content-type" id="content-type" class="headerlink"></a>
 
 The content type is `vnd.rn+json` and should be set in the `Content-Type`
 header:
@@ -43,7 +43,7 @@ Content-Type: application/vnd.rn+json
 GET /api/v1
 ```
 
-### Response <a href="#requesting-resource-endpoints-response" class="header-link"></a>
+#### Response <a href="#requesting-resource-endpoints-response" class="header-link"></a>
 
 ```
 Status: 200 OK
@@ -63,7 +63,7 @@ CampaignKit-API-Version: 1.0
 }
 ```
 
-### Curl Example <a href="#requesting-resource-endpoints-curl-example" class="header-link"></a>
+#### Curl Example <a href="#requesting-resource-endpoints-curl-example" class="header-link"></a>
 
 ```
 curl https://campaignkit.radiusnetworks.com/api/v1 \

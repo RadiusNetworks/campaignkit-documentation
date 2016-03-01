@@ -12,7 +12,7 @@ is the owner, or a member of the kit to which the kit belongs.
 
 ## Headers <a href="#headers" id="headers" class="headerlink"></a>
 
-### Authorization <a href="#authorization" id="authorization" class="headerlink"></a>
+#### Authorization <a href="#authorization" id="authorization" class="headerlink"></a>
 
 The API Key is passed via the Authorization header:
 
@@ -30,7 +30,7 @@ If you do not have an API key, [you can create one here](https://account.radiusn
 **Note:** Per [RFC 2616](http://www.w3.org/Protocols/rfc2616/rfc2616-sec2.html#sec2.2) the Authorization Header's token needs to be
 surrounded by double quotes (`"`).
 
-### Content Type <a href="#content-type" id="content-type" class="headerlink"></a>
+#### Content Type <a href="#content-type" id="content-type" class="headerlink"></a>
 
 The content type is `vnd.rn+json` and should be set in the `Content-Type`
 header:
@@ -50,7 +50,7 @@ List contents for the specified kit.
 Contents are associated to a specific `Kit`. The desired kit's `id`
 must be provided in the URL.
 
-### Response <a href="#listing-a-kit's-contents-response" class="header-link"></a>
+#### Response <a href="#listing-a-kit's-contents-response" class="header-link"></a>
 
 ```
 Status: 200 OK
@@ -124,7 +124,7 @@ CampaignKit-API-Version: 1.0
 }
 ```
 
-### Curl Example <a href="#listing-a-kit's-contents-curl-example" class="header-link"></a>
+#### Curl Example <a href="#listing-a-kit's-contents-curl-example" class="header-link"></a>
 
 ```
 curl https://campaignkit.radiusnetworks.com/api/v1/kits/1/contents \
@@ -143,7 +143,7 @@ GET /api/v1/contents/44
 
 List a specific content for the authenticated user. The desired contents's `id` needs to be provided in the URL.
 
-### Response <a href="#getting-a-content-response" class="header-link"></a>
+#### Response <a href="#getting-a-content-response" class="header-link"></a>
 
 ```
 Status: 200 OK
@@ -175,7 +175,7 @@ CampaignKit-API-Version: 1.0
 }
 ```
 
-### Curl Example <a href="#getting-a-content-curl-example" class="header-link"></a>
+#### Curl Example <a href="#getting-a-content-curl-example" class="header-link"></a>
 
 ```
 curl https://campaignkit.radiusnetworks.com/api/v1/contents/44 \
@@ -196,7 +196,7 @@ Create a content for the specified kit. The desired kit's `id` must be
 provided in the URL. In order to create a content, the authenticated
 user must be a member of the kit.
 
-### Parameters <a href="#creating-a-content-parameters" class="header-link"></a>
+#### Parameters <a href="#creating-a-content-parameters" class="header-link"></a>
 
 All contents **must** be sent in an array nested under a top level
 `contents` parameter.
@@ -209,7 +209,7 @@ All contents **must** be sent in an array nested under a top level
 | `alert_title` | `string` | The title of the alert associated with this content |
 | `alert_message` | `string` | The message of the alert associated with this content |
 
-### Example <a href="#creating-a-content-example" class="header-link"></a>
+#### Example <a href="#creating-a-content-example" class="header-link"></a>
 
 A successful content creation returns the generated content document with
 updated timestamps.
@@ -223,7 +223,7 @@ updated timestamps.
 }
 ```
 
-### Response <a href="#creating-a-content-response" class="header-link"></a>
+#### Response <a href="#creating-a-content-response" class="header-link"></a>
 
 ```
 Status: 201 Created
@@ -255,7 +255,7 @@ CampaignKit-API-Version: 1.0
 }
 ```
 
-### Curl Example <a href="#creating-a-content-curl-example" class="header-link"></a>
+#### Curl Example <a href="#creating-a-content-curl-example" class="header-link"></a>
 
 ```
 curl https://campaignkit.radiusnetworks.com/api/v1/kits/2/contents \
@@ -281,7 +281,7 @@ PUT /api/v1/contents/103
 In order to update a content, the authenticated user must be a member of
 the kit that the content is associated with.
 
-### Parameters <a href="#updating-a-content-changing-an-attribute-parameters" class="header-link"></a>
+#### Parameters <a href="#updating-a-content-changing-an-attribute-parameters" class="header-link"></a>
 
 All contents **must** be sent in an array nested under a top level
 `contents` parameter.
@@ -295,7 +295,7 @@ All contents **must** be sent in an array nested under a top level
 | `alert_title` | `string` | The title of the alert associated with this content |
 | `alert_message` | `string` | The message of the alert associated with this content |
 
-### Example <a href="#updating-a-content-changing-an-attribute-example" class="header-link"></a>
+#### Example <a href="#updating-a-content-changing-an-attribute-example" class="header-link"></a>
 
 A successful update modifies the content's `updated_at` field.
 
@@ -308,7 +308,7 @@ A successful update modifies the content's `updated_at` field.
 }
 ```
 
-### Response <a href="#updating-a-content-changing-an-attribute-response" class="header-link"></a>
+#### Response <a href="#updating-a-content-changing-an-attribute-response" class="header-link"></a>
 
 ```
 Status: 200 OK
@@ -340,7 +340,7 @@ CampaignKit-API-Version: 1.0
 }
 ```
 
-### Curl Example <a href="#updating-a-content-changing-an-attribute-curl-example" class="header-link"></a>
+#### Curl Example <a href="#updating-a-content-changing-an-attribute-curl-example" class="header-link"></a>
 
 ```
 curl https://campaignkit.radiusnetworks.com/api/v1/contents/103 \
@@ -366,7 +366,7 @@ PUT /api/v1/contents/119
 In order to update a content, the authenticated user must be a member of
 the kit that the content is associated with.
 
-### Parameters <a href="#updating-a-content-not-changing-an-attribute-parameters" class="header-link"></a>
+#### Parameters <a href="#updating-a-content-not-changing-an-attribute-parameters" class="header-link"></a>
 
 All contents **must** be sent in an array nested under a top level
 `contents` parameter.
@@ -380,7 +380,7 @@ All contents **must** be sent in an array nested under a top level
 | `alert_title` | `string` | The title of the alert associated with this content |
 | `alert_message` | `string` | The message of the alert associated with this content |
 
-### Example <a href="#updating-a-content-not-changing-an-attribute-example" class="header-link"></a>
+#### Example <a href="#updating-a-content-not-changing-an-attribute-example" class="header-link"></a>
 
 If you do not provide attributes, or if all of the provided attributes
 for a are the same, the content is not updated. In these cases a
@@ -397,7 +397,7 @@ This response will have an empty body per HTTP schemantics.
 }
 ```
 
-### Response <a href="#updating-a-content-not-changing-an-attribute-response" class="header-link"></a>
+#### Response <a href="#updating-a-content-not-changing-an-attribute-response" class="header-link"></a>
 
 ```
 Status: 204 No Content
@@ -405,7 +405,7 @@ CampaignKit-Media-Type: campaignkit.v1
 CampaignKit-API-Version: 1.0
 ```
 
-### Curl Example <a href="#updating-a-content-not-changing-an-attribute-curl-example" class="header-link"></a>
+#### Curl Example <a href="#updating-a-content-not-changing-an-attribute-curl-example" class="header-link"></a>
 
 ```
 curl https://campaignkit.radiusnetworks.com/api/v1/contents/119 \
@@ -431,7 +431,7 @@ DELETE /api/v1/contents/150
 In order to delete a content, the authenticated user must be a member of
 the kit that the content is associated with.
 
-### Response <a href="#deleting-a-content-response" class="header-link"></a>
+#### Response <a href="#deleting-a-content-response" class="header-link"></a>
 
 ```
 Status: 204 No Content
@@ -439,7 +439,7 @@ CampaignKit-Media-Type: campaignkit.v1
 CampaignKit-API-Version: 1.0
 ```
 
-### Curl Example <a href="#deleting-a-content-curl-example" class="header-link"></a>
+#### Curl Example <a href="#deleting-a-content-curl-example" class="header-link"></a>
 
 ```
 curl https://campaignkit.radiusnetworks.com/api/v1/contents/150 \

@@ -8,7 +8,7 @@ is the owner, or a member of the kit to which the kit belongs.
 
 ## Headers <a href="#headers" id="headers" class="headerlink"></a>
 
-### Authorization <a href="#authorization" id="authorization" class="headerlink"></a>
+#### Authorization <a href="#authorization" id="authorization" class="headerlink"></a>
 
 The API Key is passed via the Authorization header:
 
@@ -26,7 +26,7 @@ If you do not have an API key, [you can create one here](https://account.radiusn
 **Note:** Per [RFC 2616](http://www.w3.org/Protocols/rfc2616/rfc2616-sec2.html#sec2.2) the Authorization Header's token needs to be
 surrounded by double quotes (`"`).
 
-### Content Type <a href="#content-type" id="content-type" class="headerlink"></a>
+#### Content Type <a href="#content-type" id="content-type" class="headerlink"></a>
 
 The content type is `vnd.rn+json` and should be set in the `Content-Type`
 header:
@@ -46,7 +46,7 @@ List assets for the specified kit.
 Assets are associated to a specific `Kit`. The desired kit's `id`
 must be provided in the URL.
 
-### Response <a href="#listing-a-kit's-assets-response" class="header-link"></a>
+#### Response <a href="#listing-a-kit's-assets-response" class="header-link"></a>
 
 ```
 Status: 200 OK
@@ -100,7 +100,7 @@ CampaignKit-API-Version: 1.0
 }
 ```
 
-### Curl Example <a href="#listing-a-kit's-assets-curl-example" class="header-link"></a>
+#### Curl Example <a href="#listing-a-kit's-assets-curl-example" class="header-link"></a>
 
 ```
 curl https://campaignkit.radiusnetworks.com/api/v1/kits/2/assets \
@@ -119,7 +119,7 @@ GET /api/v1/assets/21
 
 List a specific asset for the authenticated user. The desired assets's `id` needs to be provided in the URL.
 
-### Response <a href="#getting-a-asset-response" class="header-link"></a>
+#### Response <a href="#getting-a-asset-response" class="header-link"></a>
 
 ```
 Status: 200 OK
@@ -155,7 +155,7 @@ CampaignKit-API-Version: 1.0
 }
 ```
 
-### Curl Example <a href="#getting-a-asset-curl-example" class="header-link"></a>
+#### Curl Example <a href="#getting-a-asset-curl-example" class="header-link"></a>
 
 ```
 curl https://campaignkit.radiusnetworks.com/api/v1/assets/21 \

@@ -12,7 +12,7 @@ is the owner, or a member of the kit to which the kit belongs.
 
 ## Headers <a href="#headers" id="headers" class="headerlink"></a>
 
-### Authorization <a href="#authorization" id="authorization" class="headerlink"></a>
+#### Authorization <a href="#authorization" id="authorization" class="headerlink"></a>
 
 The API Key is passed via the Authorization header:
 
@@ -30,7 +30,7 @@ If you do not have an API key, [you can create one here](https://account.radiusn
 **Note:** Per [RFC 2616](http://www.w3.org/Protocols/rfc2616/rfc2616-sec2.html#sec2.2) the Authorization Header's token needs to be
 surrounded by double quotes (`"`).
 
-### Content Type <a href="#content-type" id="content-type" class="headerlink"></a>
+#### Content Type <a href="#content-type" id="content-type" class="headerlink"></a>
 
 The content type is `vnd.rn+json` and should be set in the `Content-Type`
 header:
@@ -50,7 +50,7 @@ List places for the specified kit.
 Places are associated to a specific `Kit`. The desired kit's `id`
 must be provided in the URL.
 
-### Response <a href="#listing-a-kit's-places-response" class="header-link"></a>
+#### Response <a href="#listing-a-kit's-places-response" class="header-link"></a>
 
 ```
 Status: 200 OK
@@ -104,7 +104,7 @@ CampaignKit-API-Version: 1.0
 }
 ```
 
-### Curl Example <a href="#listing-a-kit's-places-curl-example" class="header-link"></a>
+#### Curl Example <a href="#listing-a-kit's-places-curl-example" class="header-link"></a>
 
 ```
 curl https://campaignkit.radiusnetworks.com/api/v1/kits/4/places \
@@ -123,7 +123,7 @@ GET /api/v1/places/37
 
 List a specific place for the authenticated user. The desired places's `id` needs to be provided in the URL.
 
-### Response <a href="#getting-a-place-response" class="header-link"></a>
+#### Response <a href="#getting-a-place-response" class="header-link"></a>
 
 ```
 Status: 200 OK
@@ -159,7 +159,7 @@ CampaignKit-API-Version: 1.0
 }
 ```
 
-### Curl Example <a href="#getting-a-place-curl-example" class="header-link"></a>
+#### Curl Example <a href="#getting-a-place-curl-example" class="header-link"></a>
 
 ```
 curl https://campaignkit.radiusnetworks.com/api/v1/places/37 \
@@ -180,7 +180,7 @@ Create a place for the specified kit. The desired kit's `id` must be
 provided in the URL. In order to create a place, the authenticated
 user must be a member of the kit.
 
-### Parameters <a href="#creating-a-place-parameters" class="header-link"></a>
+#### Parameters <a href="#creating-a-place-parameters" class="header-link"></a>
 
 All places **must** be sent in an array nested under a top level
 `places` parameter.
@@ -197,7 +197,7 @@ All places **must** be sent in an array nested under a top level
 | `minor` | `integer` | The minor value of the place as a beacon |
 | `type` | `integer` | The minor value of the place as a beacon |
 
-### Example <a href="#creating-a-place-example" class="header-link"></a>
+#### Example <a href="#creating-a-place-example" class="header-link"></a>
 
 A successful place creation returns the generated place document with
 updated timestamps.
@@ -213,7 +213,7 @@ updated timestamps.
 }
 ```
 
-### Response <a href="#creating-a-place-response" class="header-link"></a>
+#### Response <a href="#creating-a-place-response" class="header-link"></a>
 
 ```
 Status: 201 Created
@@ -249,7 +249,7 @@ CampaignKit-API-Version: 1.0
 }
 ```
 
-### Curl Example <a href="#creating-a-place-curl-example" class="header-link"></a>
+#### Curl Example <a href="#creating-a-place-curl-example" class="header-link"></a>
 
 ```
 curl https://campaignkit.radiusnetworks.com/api/v1/kits/1/places \
@@ -277,7 +277,7 @@ PUT /api/v1/places/98
 In order to update a place, the authenticated user must be a member of
 the kit that the place is associated with.
 
-### Parameters <a href="#updating-a-place-changing-an-attribute-parameters" class="header-link"></a>
+#### Parameters <a href="#updating-a-place-changing-an-attribute-parameters" class="header-link"></a>
 
 All places **must** be sent in an array nested under a top level
 `places` parameter.
@@ -295,7 +295,7 @@ All places **must** be sent in an array nested under a top level
 | `minor` | `integer` | The minor value of the place as a beacon |
 | `type` | `integer` | The minor value of the place as a beacon |
 
-### Example <a href="#updating-a-place-changing-an-attribute-example" class="header-link"></a>
+#### Example <a href="#updating-a-place-changing-an-attribute-example" class="header-link"></a>
 
 A successful update modifies the place's `updated_at` field.
 
@@ -308,7 +308,7 @@ A successful update modifies the place's `updated_at` field.
 }
 ```
 
-### Response <a href="#updating-a-place-changing-an-attribute-response" class="header-link"></a>
+#### Response <a href="#updating-a-place-changing-an-attribute-response" class="header-link"></a>
 
 ```
 Status: 200 OK
@@ -344,7 +344,7 @@ CampaignKit-API-Version: 1.0
 }
 ```
 
-### Curl Example <a href="#updating-a-place-changing-an-attribute-curl-example" class="header-link"></a>
+#### Curl Example <a href="#updating-a-place-changing-an-attribute-curl-example" class="header-link"></a>
 
 ```
 curl https://campaignkit.radiusnetworks.com/api/v1/places/98 \
@@ -370,7 +370,7 @@ PUT /api/v1/places/114
 In order to update a place, the authenticated user must be a member of
 the kit that the place is associated with.
 
-### Parameters <a href="#updating-a-place-not-changing-an-attribute-parameters" class="header-link"></a>
+#### Parameters <a href="#updating-a-place-not-changing-an-attribute-parameters" class="header-link"></a>
 
 All places **must** be sent in an array nested under a top level
 `places` parameter.
@@ -388,7 +388,7 @@ All places **must** be sent in an array nested under a top level
 | `minor` | `integer` | The minor value of the place as a beacon |
 | `type` | `integer` | The minor value of the place as a beacon |
 
-### Example <a href="#updating-a-place-not-changing-an-attribute-example" class="header-link"></a>
+#### Example <a href="#updating-a-place-not-changing-an-attribute-example" class="header-link"></a>
 
 If you do not provide attributes, or if all of the provided attributes
 for a are the same, the place is not updated. In these cases a
@@ -405,7 +405,7 @@ This response will have an empty body per HTTP schemantics.
 }
 ```
 
-### Response <a href="#updating-a-place-not-changing-an-attribute-response" class="header-link"></a>
+#### Response <a href="#updating-a-place-not-changing-an-attribute-response" class="header-link"></a>
 
 ```
 Status: 204 No Content
@@ -413,7 +413,7 @@ CampaignKit-Media-Type: campaignkit.v1
 CampaignKit-API-Version: 1.0
 ```
 
-### Curl Example <a href="#updating-a-place-not-changing-an-attribute-curl-example" class="header-link"></a>
+#### Curl Example <a href="#updating-a-place-not-changing-an-attribute-curl-example" class="header-link"></a>
 
 ```
 curl https://campaignkit.radiusnetworks.com/api/v1/places/114 \
@@ -439,7 +439,7 @@ DELETE /api/v1/places/131
 In order to delete a place, the authenticated user must be a member of
 the kit that the place is associated with.
 
-### Response <a href="#deleting-a-place-response" class="header-link"></a>
+#### Response <a href="#deleting-a-place-response" class="header-link"></a>
 
 ```
 Status: 204 No Content
@@ -447,7 +447,7 @@ CampaignKit-Media-Type: campaignkit.v1
 CampaignKit-API-Version: 1.0
 ```
 
-### Curl Example <a href="#deleting-a-place-curl-example" class="header-link"></a>
+#### Curl Example <a href="#deleting-a-place-curl-example" class="header-link"></a>
 
 ```
 curl https://campaignkit.radiusnetworks.com/api/v1/places/131 \

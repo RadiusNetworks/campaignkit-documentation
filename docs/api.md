@@ -12,7 +12,7 @@ Resource relationships are created through the use of URI templates and resource
 
 ## Headers
 
-### Authorization
+#### Authorization
 
 The API Key is passed via the Authorization header:
 
@@ -28,7 +28,7 @@ API Tokens can be managed in your [Radius Networks Account Profile](https://acco
 
 Note: Per [RFC 2616](http://www.w3.org/Protocols/rfc2616/rfc2616-sec2.html#sec2.2) the Authorization Header's token needs to be surrounded by double quotes (`"`).
 
-### Content Type
+#### Content Type
 
 The content type is `vnd+json`, and should be set in the Content-Type header:
 
