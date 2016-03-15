@@ -39,7 +39,11 @@
 	
 	<option value="properties">Properties</option>
 	
+	<option value="//api/name/activeCampaigns">&nbsp;&nbsp;&nbsp;&nbsp;activeCampaigns</option>
+	
 	<option value="//api/name/campaigns">&nbsp;&nbsp;&nbsp;&nbsp;campaigns</option>
+	
+	<option value="//api/name/foundCampaigns">&nbsp;&nbsp;&nbsp;&nbsp;foundCampaigns</option>
 	
 	
 	
@@ -50,6 +54,8 @@
 	
 	<option value="//api/name/managerWithDelegate:">&nbsp;&nbsp;&nbsp;&nbsp;+ managerWithDelegate:</option>
 	
+	<option value="//api/name/managerWithDelegate:andConfig:">&nbsp;&nbsp;&nbsp;&nbsp;+ managerWithDelegate:andConfig:</option>
+	
 	
 	
 	
@@ -59,17 +65,19 @@
 	
 	<option value="//api/name/campaignWithId:">&nbsp;&nbsp;&nbsp;&nbsp;- campaignWithId:</option>
 	
+	<option value="//api/name/deregisterDeviceToken">&nbsp;&nbsp;&nbsp;&nbsp;- deregisterDeviceToken</option>
+	
 	<option value="//api/name/handleRemoteNotification:fetchCompletionHandler:">&nbsp;&nbsp;&nbsp;&nbsp;- handleRemoteNotification:fetchCompletionHandler:</option>
+	
+	<option value="//api/name/logLevel:">&nbsp;&nbsp;&nbsp;&nbsp;- logLevel:</option>
 	
 	<option value="//api/name/pruneExpiredCampaigns">&nbsp;&nbsp;&nbsp;&nbsp;- pruneExpiredCampaigns</option>
 	
-	<option value="//api/name/recordAnalytics:forCampaign:">&nbsp;&nbsp;&nbsp;&nbsp;- recordAnalytics:forCampaign:</option>
-	
-	<option value="//api/name/recordAnalytics:forCampaign:atPlace:">&nbsp;&nbsp;&nbsp;&nbsp;- recordAnalytics:forCampaign:atPlace:</option>
-	
-	<option value="//api/name/recordAnalytics:forCampaign:atPlaceId:">&nbsp;&nbsp;&nbsp;&nbsp;- recordAnalytics:forCampaign:atPlaceId:</option>
+	<option value="//api/name/registerDeviceToken:">&nbsp;&nbsp;&nbsp;&nbsp;- registerDeviceToken:</option>
 	
 	<option value="//api/name/removeCampaign:">&nbsp;&nbsp;&nbsp;&nbsp;- removeCampaign:</option>
+	
+	<option value="//api/name/setAirship:">&nbsp;&nbsp;&nbsp;&nbsp;- setAirship:</option>
 	
 	<option value="//api/name/setCampaignFulfilled:atPlace:">&nbsp;&nbsp;&nbsp;&nbsp;- setCampaignFulfilled:atPlace:</option>
 	
@@ -109,7 +117,11 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/activeCampaigns">activeCampaigns</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/campaigns">campaigns</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/foundCampaigns">foundCampaigns</a></span></li>
 	
 </ul></li>
 
@@ -121,6 +133,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/managerWithDelegate:">managerWithDelegate:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/managerWithDelegate:andConfig:">managerWithDelegate:andConfig:</a></span></li>
+	
 </ul></li>
 
 
@@ -131,17 +145,19 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/campaignWithId:">campaignWithId:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/deregisterDeviceToken">deregisterDeviceToken</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/handleRemoteNotification:fetchCompletionHandler:">handleRemoteNotification:fetchCompletionHandler:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/logLevel:">logLevel:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/pruneExpiredCampaigns">pruneExpiredCampaigns</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/recordAnalytics:forCampaign:">recordAnalytics:forCampaign:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/recordAnalytics:forCampaign:atPlace:">recordAnalytics:forCampaign:atPlace:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/recordAnalytics:forCampaign:atPlaceId:">recordAnalytics:forCampaign:atPlaceId:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/registerDeviceToken:">registerDeviceToken:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeCampaign:">removeCampaign:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setAirship:">setAirship:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setCampaignFulfilled:atPlace:">setCampaignFulfilled:atPlace:</a></span></li>
 	
@@ -226,6 +242,12 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/managerWithDelegate:andConfig:">+&nbsp;managerWithDelegate:andConfig:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/campaignWithId:">&ndash;&nbsp;campaignWithId:</a></code>
 	</span>
 	
@@ -298,25 +320,43 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/recordAnalytics:forCampaign:atPlace:">&ndash;&nbsp;recordAnalytics:forCampaign:atPlace:</a></code>
+		<code><a href="#//api/name/registerDeviceToken:">&ndash;&nbsp;registerDeviceToken:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/recordAnalytics:forCampaign:atPlaceId:">&ndash;&nbsp;recordAnalytics:forCampaign:atPlaceId:</a></code>
+		<code><a href="#//api/name/deregisterDeviceToken">&ndash;&nbsp;deregisterDeviceToken</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/recordAnalytics:forCampaign:">&ndash;&nbsp;recordAnalytics:forCampaign:</a></code>
+		<code><a href="#//api/name/setAirship:">&ndash;&nbsp;setAirship:</a></code>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/logLevel:">&ndash;&nbsp;logLevel:</a></code>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/campaigns">&nbsp;&nbsp;campaigns</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/foundCampaigns">&nbsp;&nbsp;foundCampaigns</a></code>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/activeCampaigns">&nbsp;&nbsp;activeCampaigns</a></code>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -334,13 +374,50 @@
 						<h2 class="subtitle subtitle-methods">Properties</h2>
 						
 						<div class="section-method">
+	<a name="//api/name/activeCampaigns" title="activeCampaigns"></a>
+	<h3 class="subsubtitle method-title">activeCampaigns</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Contains the list of all active <a href="#//api/name/campaigns">campaigns</a>, including <a href="#//api/name/campaigns">campaigns</a> that will <a href="#//api/name/start">start</a>
+in the future.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) NSArray *activeCampaigns</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CKManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/campaigns" title="campaigns"></a>
 	<h3 class="subsubtitle method-title">campaigns</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Contains a list of all the campaigns that the app has found.</p>
+		<p>Deprecated: please use <a href="#//api/name/foundCampaigns">foundCampaigns</a> instead.</p>
 	</div>		
 	
     
@@ -355,9 +432,45 @@
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CKManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/foundCampaigns" title="foundCampaigns"></a>
+	<h3 class="subsubtitle method-title">foundCampaigns</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Contains a list of all the <a href="#//api/name/campaigns">campaigns</a> that the app has found.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly) NSArray *foundCampaigns</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>This can be used to populate a TableView with all currently active campaigns that the app has encountered.</p>
+		<p>This can be used to populate a TableView with all currently active <a href="#//api/name/campaigns">campaigns</a> that the app has encountered.</p>
 	</div>
 	
 	
@@ -447,7 +560,9 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Example usage:</p>
+		<p>Reads the configuration settings from the CampaignKit.plist file.</p>
+
+<p>Example usage:</p>
 
 <pre><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -456,6 +571,56 @@
     return YES;
 }
 </code></pre>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="../Protocols/CKManagerDelegate.html">CKManagerDelegate</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CKManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/managerWithDelegate:andConfig:" title="managerWithDelegate:andConfig:"></a>
+	<h3 class="subsubtitle method-title">managerWithDelegate:andConfig:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns a new instance of a <code>CKManager</code> that uses the supplied <a href="#//api/name/delegate">delegate</a> to delivery events.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>+ (CKManager *)managerWithDelegate:(id&lt;CKManagerDelegate&gt;)<em>delegate</em> andConfig:(NSDictionary *)<em>config</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Reads the configuration settings from the supplied dictionary.</p>
 	</div>
 	
 	
@@ -562,6 +727,42 @@
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/deregisterDeviceToken" title="deregisterDeviceToken"></a>
+	<h3 class="subsubtitle method-title">deregisterDeviceToken</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>De-registers a device token with the Campaign Kit server</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)deregisterDeviceToken</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CKManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/handleRemoteNotification:fetchCompletionHandler:" title="handleRemoteNotification:fetchCompletionHandler:"></a>
 	<h3 class="subsubtitle method-title">handleRemoteNotification:fetchCompletionHandler:</h3>
 	
@@ -618,6 +819,42 @@ is added for that location, and a &ldquo;silent&rdquo; push notification is sent
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/logLevel:" title="logLevel:"></a>
+	<h3 class="subsubtitle method-title">logLevel:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Set the logging level of the SDK</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)logLevel:(NSInteger)<em>level</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CKManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/pruneExpiredCampaigns" title="pruneExpiredCampaigns"></a>
 	<h3 class="subsubtitle method-title">pruneExpiredCampaigns</h3>
 	
@@ -654,18 +891,18 @@ is added for that location, and a &ldquo;silent&rdquo; push notification is sent
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/recordAnalytics:forCampaign:" title="recordAnalytics:forCampaign:"></a>
-	<h3 class="subsubtitle method-title">recordAnalytics:forCampaign:</h3>
+	<a name="//api/name/registerDeviceToken:" title="registerDeviceToken:"></a>
+	<h3 class="subsubtitle method-title">registerDeviceToken:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Record an <a href="../docs/Docs/analytics.html">analytics</a> event which references a campaign</p>
+		<p>Registers a device token with the Campaign Kit server</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)recordAnalytics:(CKAnalyticsType)<em>eventType</em> forCampaign:(CKCampaign *)<em>campaign</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)registerDeviceToken:(NSData *)<em>deviceToken</em></code></div>
 
     
 	
@@ -675,77 +912,16 @@ is added for that location, and a &ldquo;silent&rdquo; push notification is sent
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">CKManager.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/recordAnalytics:forCampaign:atPlace:" title="recordAnalytics:forCampaign:atPlace:"></a>
-	<h3 class="subsubtitle method-title">recordAnalytics:forCampaign:atPlace:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Record an <a href="../docs/Docs/analytics.html">analytics</a> event which references a campaign and a place</p>
-	</div>		
-	
-    
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Example Usage:</p>
 
-	<div class="method-subsection method-declaration"><code>- (void)recordAnalytics:(CKAnalyticsType)<em>eventType</em> forCampaign:(CKCampaign *)<em>campaign</em> atPlace:(CKPlace *)<em>place</em></code></div>
-
-    
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">CKManager.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/recordAnalytics:forCampaign:atPlaceId:" title="recordAnalytics:forCampaign:atPlaceId:"></a>
-	<h3 class="subsubtitle method-title">recordAnalytics:forCampaign:atPlaceId:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Record an <a href="../docs/Docs/analytics.html">analytics</a> event which references a campaign and a place</p>
-	</div>		
-	
-    
-
-	<div class="method-subsection method-declaration"><code>- (void)recordAnalytics:(CKAnalyticsType)<em>eventType</em> forCampaign:(CKCampaign *)<em>campaign</em> atPlaceId:(NSInteger)<em>placeId</em></code></div>
-
-    
-	
-	
-	
-	
-	
-	
+<pre><code>- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    [self.campaignKitManager registerDeviceToken:deviceToken];
+}
+</code></pre>
+	</div>
 	
 	
 	
@@ -774,6 +950,43 @@ is added for that location, and a &ldquo;silent&rdquo; push notification is sent
     
 
 	<div class="method-subsection method-declaration"><code>- (void)removeCampaign:(CKCampaign *)<em>campaign</em></code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">CKManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setAirship:" title="setAirship:"></a>
+	<h3 class="subsubtitle method-title">setAirship:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets the instance of Urban Airship SDK Manager for integrating the service with
+campaign Kit.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setAirship:(id)<em>sharedAirship</em></code></div>
 
     
 	
@@ -1114,7 +1327,7 @@ application <a href="#//api/name/delegate">delegate</a>. Then within that method
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2015 Radius Networks. All rights reserved. (Last updated: 2015-01-16)</span><br />
+						<p><span class="copyright">&copy; 2016 Radius Networks. All rights reserved. (Last updated: 2016-03-15)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 963)</a>.</span></p>
 						
